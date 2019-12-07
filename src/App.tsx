@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.scss";
+import { Iframe } from "./components";
+import TopBar from "./TopBar/TopBar";
+import data from "./data.json";
+import LinksBar from "./LinksBar/LinksBar";
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <LinksBar expanded links={data} onClick={() => {}} />
+
+      <main className="main">
+      <TopBar />
+        <Iframe src={""} />
+      </main>
     </div>
   );
-}
+};
 
 export default App;

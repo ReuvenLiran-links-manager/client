@@ -1,0 +1,30 @@
+@import './_colors.scss';
+@import './Button/_button.scss';
+@import "./InputFiield/_inputField.scss";
+@import './Iframe/_iframe.scss';
+
+ /* width */
+ ::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $teal-200;
+  cursor: pointer;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $teal-500;
+  cursor: pointer;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $teal-500;
+} 
+
+::-webkit-scrollbar-button {
+  background: $teal-500;
+}

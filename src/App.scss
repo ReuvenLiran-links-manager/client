@@ -1,0 +1,47 @@
+@import './components/styles';
+@import './TopBar/_topBar';
+@import './LinksBar/_linksBar';
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.App {
+  display: flex;
+  justify-content:flex-start;
+  align-items: flex-start;
+  height: 100vh;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: flex-start;
+  height: 100vh;
+  width: calc(100vw - 200px);
+}
+
+
+// .App {
+//   text-align: center;
+// }
+
+// .App-logo {
+//   height: 40vmin;
+// }
+
+// .App-header {
+//   background-color: #282c34;
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: calc(10px + 2vmin);
+//   color: white;
+// }
+
+// .App-link {
+//   color: #09d3ac;
+// }

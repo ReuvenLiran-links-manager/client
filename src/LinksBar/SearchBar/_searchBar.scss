@@ -1,0 +1,23 @@
+.search-bar {
+  display: flex;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+  align-items: center;
+  outline: none;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  .material-icons, .input-field {
+    background-color: inherit;
+    // color: inherit;
+  }
+
+  .input-field {
+    color: rgba($teal-50, .8);
+  }
+  .material-icons {
+    color: rgba($teal-50, .5);
+  }
+}
