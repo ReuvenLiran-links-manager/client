@@ -20,7 +20,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn fix"
+      "pre-push": "yarn fix && git add . && git commit \"pre push - fixed by prettier and eslint\""
     }
   },
   "eslintConfig": {
