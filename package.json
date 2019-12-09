@@ -18,6 +18,11 @@
     "fix": "eslint --fix 'src/**/*.{js,ts,tsx}'",
     "format": "prettier --write \"src/**/*.tsx\""
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn fix"
+    }
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
