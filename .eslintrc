@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb", "plugin:@typescript-eslint/recommended"],
+  "extends": ["airbnb", "plugin:@typescript-eslint/recommended","prettier", "plugin:prettier/recommended"],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "prettier"],
   "settings": {
@@ -8,7 +8,12 @@
     },
     "import/resolver": {
       "typescript": {}
-    }
+    },
+  },
+  "env": {
+    "browser": true,
+    "jest": true,
+    "node": true
   },
   "rules": {
     "react/jsx-filename-extension": [
@@ -19,6 +24,8 @@
       2,
       { "devDependencies": ["**/test.tsx", "**/test.ts"] }
     ],
-    "@typescript-eslint/indent": [2, 2]
+    "@typescript-eslint/indent": [2, 2],
+    "prettier/prettier": [2],
+    "import/prefer-default-export": [1]
   }
 }

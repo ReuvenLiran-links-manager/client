@@ -13,8 +13,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/* --ext .js,.jsx,.ts,.tsx",
-    "format": "prettier-eslint --write \"src/**/*.{js|jsx|ts|tsx}\""
+    "lint1": "eslint --help",
+    "lint": "eslint 'src/**/*.{js,ts,tsx}'",
+    "fix": "eslint --fix 'src/**/*.{js,ts,tsx}'",
+    "format": "prettier --write \"src/**/*.tsx\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,12 +45,12 @@
     "customize-cra": "^0.9.1",
     "eslint": "6.7.2",
     "eslint-config-airbnb": "18.0.1",
-    "eslint-config-prettier": "6.7.0",
+    "eslint-config-prettier": "^6.7.0",
     "eslint-import-resolver-typescript": "2.0.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-json": "2.0.1",
     "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "7.17.0",
     "husky": "^3.1.0",
     "node-sass": "^4.13.0",
