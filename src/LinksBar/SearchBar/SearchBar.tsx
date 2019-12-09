@@ -1,8 +1,8 @@
 import React, { memo, useState, FunctionComponent } from "react";
 import PropTypes, { InferProps } from "prop-types";
 
-import { InputField, Icon } from "@components";
 import { Icons } from "@components/types";
+import { InputField, Icon } from "@components";
 
 const types = {
   onChange: PropTypes.func.isRequired

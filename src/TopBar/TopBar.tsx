@@ -1,13 +1,13 @@
 import React, { useState, FunctionComponent } from "react";
-import PropTypes, { InferProps } from "prop-types";
+import { InferProps } from "prop-types";
 import { InputField, ButtonIcon } from "../components";
-import { Icons } from '../components/types';
+import { Icons } from "../components/types";
 
 const types = {};
 
 type Props = InferProps<typeof types>;
 
-const TopBar: FunctionComponent<Props> = props => {
+const TopBar: FunctionComponent<Props> = () => {
   const [link, setLink] = useState("");
 
   return (
@@ -16,7 +16,12 @@ const TopBar: FunctionComponent<Props> = props => {
         onChange={({ target: { value } }) => setLink(value)}
         value={link}
       />
-      <ButtonIcon className="btn-primary" onClick={_ => {}}>
+      <ButtonIcon
+        className="btn-primary"
+        onClick={_ => {
+          console.log("add");
+        }}
+      >
         {Icons.LIST_ADD}
       </ButtonIcon>
     </header>

@@ -1,11 +1,12 @@
 import React, { memo, useState, FunctionComponent } from "react";
 import { InferProps } from "prop-types";
+import classNames from "classnames";
+
+import { Icons } from "@components/types";
+import { ButtonIcon } from "@components";
+
 import Links, { types as linksType } from "./Links";
 import SearchBar from "./SearchBar/SearchBar";
-import { ButtonIcon } from "@components";
-import { Icons } from "@components/types";
-
-import classNames from "classnames";
 
 const types = {
   ...linksType
@@ -18,9 +19,7 @@ const LinksBar: FunctionComponent<Props> = memo(props => {
   const [shrinked, onShrink] = useState(true);
 
   return (
-    <nav
-      className={classNames("links-bar", { "links-bar--shrink": shrinked })}
-    >
+    <nav className={classNames("links-bar", { "links-bar--shrink": shrinked })}>
       <header className="links-bar__header">
         <ButtonIcon
           className="btn-primary"
@@ -30,7 +29,11 @@ const LinksBar: FunctionComponent<Props> = memo(props => {
         >
           {Icons.MENU}
         </ButtonIcon>
-        <SearchBar onChange={() => {}} />
+        <SearchBar
+          onChange={() => {
+            console.log("empty");
+          }}
+        />
       </header>
       <Links links={links} onClick={onClick} />
     </nav>

@@ -8,12 +8,16 @@ import LinksBar from "./LinksBar/LinksBar";
 const App: React.FC = () => {
   return (
     <div className="App">
-
-      <LinksBar links={data} onClick={() => {}} />
+      <LinksBar
+        links={data}
+        onClick={() => {
+          console.log("empty");
+        }}
+      />
 
       <main className="main">
-      <TopBar />
-        <Iframe src={""} />
+        <TopBar />
+        <Iframe src="" />
       </main>
     </div>
   );

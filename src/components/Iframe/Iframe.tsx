@@ -1,17 +1,16 @@
-import React, { FunctionComponent } from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import React, { FunctionComponent } from "react";
+import PropTypes, { InferProps } from "prop-types";
 
 const types = {
   src: PropTypes.string.isRequired
 };
 
-type Props = InferProps<typeof types>
+type Props = InferProps<typeof types>;
 
-const Iframe: FunctionComponent<Props> = (props) => {
-  const {
-    src,
-    ...otherProps
-  } = props;
+const Iframe: FunctionComponent<Props> = props => {
+  const { src, ...otherProps } = props;
+
+  /* eslint-disable react/jsx-props-no-spreading */
   return (
     <iframe
       id="sss"
@@ -22,12 +21,9 @@ const Iframe: FunctionComponent<Props> = (props) => {
       // src="/new/https:%2F%2Fwww.google.com"
     />
   );
+  /* eslint-enable react/jsx-props-no-spreading */
 };
 
-Iframe.propTypes = types
-
-Iframe.defaultProps = {
-  src: '',
-};
+Iframe.propTypes = types;
 
 export default Iframe;

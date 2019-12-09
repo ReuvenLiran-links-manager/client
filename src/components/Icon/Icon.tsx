@@ -1,30 +1,33 @@
-import React, { FunctionComponent } from 'react';
-import PropTypes, { InferProps } from 'prop-types';
+import React, { FunctionComponent } from "react";
+import { InferProps } from "prop-types";
+import { checkEnum } from "@prop-types";
 
 export enum Icons {
-  MENU = 'menu',
-  SEARCH = 'search',
-  LIST_ADD = 'playlist_add'
+  MENU = "menu",
+  SEARCH = "search",
+  LIST_ADD = "playlist_add"
 }
 
-export const types = {
-  // icon: PropTypes.string
+export const checkIcons = {
+  isRequired: checkEnum(Icons)
 };
 
-type Props = InferProps<typeof types>
-
-interface FCWithIcons extends FunctionComponent<{icon: Icons}> {
-  children: Icons; 
-}
-
-const Icon: FunctionComponent<{children: Icons}> = (props) => {
-  const {
-    children,
-  } = props;
-  return (
-    <i className="material-icons">{children}</i>
-  )
+const types = {
+  children: Icons
 };
 
-Icon.propTypes = types;
+type bla = {
+  children: Record<Icons, string>;
+};
+
+type Props = InferProps<typeof types>;
+
+const Icon: FunctionComponent<Props> = props => {
+  const { children } = props;
+  return <i className="material-icons">{children}</i>;
+};
+
+Icon.propTypes = {
+  children: checkIcons.isRequired
+};
 export default Icon;

@@ -19,39 +19,34 @@ type LinksProps = InferProps<typeof types>;
 const linkType = { ...linkShape, onClick: PropTypes.func.isRequired };
 type LinkProps = InferProps<typeof linkType>;
 
-const Link: FunctionComponent<LinkProps> = memo(props => {
-  const { id, icon, url, description, onClick } = props;
+const LinkButton: FunctionComponent<LinkProps> = memo(props => {
+  const { icon, url, description, onClick } = props;
   return (
     <li>
       <Button
         className="link"
         onClick={() => {
           onClick(url);
-          console.log(url);
         }}
       >
-        <span className='link__container'>
-          <img className='link__img' src={icon} />
-          <span className='link__text'>{description}</span>
+        <span className="link__container">
+          <img alt={url} className="link__img" src={icon} />
+          <span className="link__text">{description}</span>
         </span>
       </Button>
     </li>
   );
 });
 
-Link.defaultProps = {
-  icon: ''
-}
-
-Link.propTypes = linkType;
+LinkButton.propTypes = linkType;
 
 const Links: FunctionComponent<LinksProps> = props => {
   const { links, onClick } = props;
   return (
-    <ul className='links'>
+    <ul className="links">
       {links.map(link => {
         return (
-          <Link
+          <LinkButton
             key={link.id}
             id={link.id}
             url={link.url}

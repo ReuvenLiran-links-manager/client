@@ -1,1 +1,1 @@
-export { Icons } from './Icon/Icon.tsx';
+export { Icons, checkIcons } from "./Icon/Icon.tsx";

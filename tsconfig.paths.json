@@ -4,6 +4,7 @@
     "paths": {
       "@components": ["components/index.ts"],
       "@components/*": ["components/*"],
+      "@prop-types": ["utils/propTypes.ts"]
     }
   }
 }
