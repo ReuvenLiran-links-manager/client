@@ -16,11 +16,12 @@
     "lint1": "eslint --help",
     "lint": "eslint 'src/**/*.{js,ts,tsx}'",
     "fix": "eslint --fix 'src/**/*.{js,ts,tsx}'",
-    "format": "prettier --write \"src/**/*.tsx\""
+    "format": "prettier --write \"src/**/*.tsx\"",
+    "try": "yarn fix && git add . && git commit"
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn fix && git add . && git commit \"pre push - fixed by prettier and eslint\""
+      "pre-push": "yarn fix && git add . && git commit \"pre push - fixed by prettier and eslint"
     }
   },
   "eslintConfig": {
