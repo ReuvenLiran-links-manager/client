@@ -3,7 +3,8 @@ import PropTypes, { InferProps } from 'prop-types';
 
 export enum Icons {
   MENU = 'menu',
-  SEARCH = 'search'
+  SEARCH = 'search',
+  LIST_ADD = 'playlist_add'
 }
 
 export const types = {
@@ -13,15 +14,15 @@ export const types = {
 type Props = InferProps<typeof types>
 
 interface FCWithIcons extends FunctionComponent<{icon: Icons}> {
-  icon: Icons; 
+  children: Icons; 
 }
 
-const Icon: FunctionComponent<{icon: Icons}> = (props) => {
+const Icon: FunctionComponent<{children: Icons}> = (props) => {
   const {
-    icon,
+    children,
   } = props;
   return (
-    <i className="material-icons">{icon}</i>
+    <i className="material-icons">{children}</i>
   )
 };
 

@@ -11,14 +11,14 @@ const types = {
 type Props = InferProps<typeof types>;
 
 interface IProps extends Props {
-  icon: Icons; 
+  children: Icons;
 }
 
 const ButtonIcon: FunctionComponent<IProps> = props => {
-  const { icon, ...otherProps } = props;
+  const { children, ...otherProps } = props;
   return (
     <Button {...otherProps}>
-      <Icon icon={icon} />
+      <Icon>{children}</Icon>
     </Button>
   );
 };

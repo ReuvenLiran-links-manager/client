@@ -9,7 +9,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
 
-      <LinksBar expanded links={data} onClick={() => {}} />
+      <LinksBar links={data} onClick={() => {}} />
 
       <main className="main">
       <TopBar />

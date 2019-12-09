@@ -11,7 +11,6 @@ const linkShape = {
 
 export const types = {
   links: PropTypes.arrayOf(PropTypes.shape(linkShape).isRequired).isRequired,
-  expanded: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired
 };
 
@@ -47,7 +46,7 @@ Link.defaultProps = {
 Link.propTypes = linkType;
 
 const Links: FunctionComponent<LinksProps> = props => {
-  const { links, onClick, expanded } = props;
+  const { links, onClick } = props;
   return (
     <ul className='links'>
       {links.map(link => {
