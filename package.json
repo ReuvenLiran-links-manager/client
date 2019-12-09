@@ -17,7 +17,7 @@
     "lint": "eslint 'src/**/*.{js,ts,tsx}'",
     "fix": "eslint --fix 'src/**/*.{js,ts,tsx}'",
     "format": "prettier --write \"src/**/*.tsx\"",
-    "fix-commit": "yarn fix && git add . && git commit"
+    "fix-commit": "yarn fix && git add . && git commit -em  \"pre push - fixed by prettier and eslint\""
   },
   "husky": {
     "hooks": {
