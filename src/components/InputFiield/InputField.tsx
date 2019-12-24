@@ -7,6 +7,7 @@ const types = {
   type: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  // eslint-disable-next-line react/require-default-props
   placeholder: PropTypes.string.isRequired
 };
 
@@ -31,6 +32,7 @@ InputField.propTypes = types;
 
 InputField.defaultProps = {
   className: "",
+  // eslint-disable-next-line react/default-props-match-prop-types
   placeholder: ""
 };
 

@@ -14,10 +14,10 @@ const TopBar: FunctionComponent<Props> = () => {
     <header className="top-bar">
       <h4>Linkim</h4>
       <InputField
-        type='text'
+        type="text"
         onChange={({ target: { value } }) => setLink(value)}
         value={link}
-        placeholder='Enter url here'
+        placeholder="Enter url here"
       />
       <ButtonIcon
         className="btn-primary"

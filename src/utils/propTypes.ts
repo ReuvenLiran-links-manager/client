@@ -1,5 +1,3 @@
-import { CSSProperties } from "react";
-
 export const checkEnum = (enumT: any) => (
   props: any,
   propName: any,
@@ -32,4 +30,4 @@ export const checkEnum = (enumT: any) => (
 //     error = new Error(errorMsg);
 //   }
 //   return error;
-// }; 
+// };

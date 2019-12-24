@@ -17,8 +17,8 @@ const SearchBar: FunctionComponent<Props> = memo(props => {
     <div className="search-bar">
       <Icon>{Icons.SEARCH}</Icon>
       <InputField
-        type='text'
-        placeholder=''
+        type="text"
+        placeholder=""
         onChange={({ target: { value } }) => {
           onSearch(value);
           onChange(value);

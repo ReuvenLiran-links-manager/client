@@ -4,6 +4,7 @@ import PropTypes, { InferProps } from "prop-types";
 const types = {
   src: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
   style: PropTypes.object
 };
 

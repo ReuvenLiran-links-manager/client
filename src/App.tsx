@@ -9,7 +9,6 @@ const mystyles = {
   display: "none"
 } as React.CSSProperties;
 
-
 const App: React.FC = () => {
   const [url, setUrl] = useState("");
   setTimeout(() => {
