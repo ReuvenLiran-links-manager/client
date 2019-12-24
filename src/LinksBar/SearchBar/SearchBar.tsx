@@ -2,7 +2,7 @@ import React, { memo, useState, FunctionComponent } from "react";
 import PropTypes, { InferProps } from "prop-types";
 
 import { Icons } from "@components/types";
-import { InputFieldText, Icon } from "@components";
+import { InputField, Icon } from "@components";
 
 const types = {
   onChange: PropTypes.func.isRequired
@@ -16,7 +16,9 @@ const SearchBar: FunctionComponent<Props> = memo(props => {
   return (
     <div className="search-bar">
       <Icon>{Icons.SEARCH}</Icon>
-      <InputFieldText
+      <InputField
+        type='text'
+        placeholder=''
         onChange={({ target: { value } }) => {
           onSearch(value);
           onChange(value);

@@ -1,4 +1,17 @@
 .top-bar {
   display: flex;
-  width: 100%;;
+  width: 100%;
+  // background-color: #6e82d4;
+  // background-color: #1090E2;
+  background-color: $teal-800;
+  color: white;
+  align-items: center;;
+
+  h4 {
+    margin-right: 10px;
+  }
+  .input-field {
+    background-color: inherit;
+    color: inherit;
+  }
 }

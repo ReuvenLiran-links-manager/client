@@ -6,18 +6,20 @@ const types = {
   className: PropTypes.string,
   type: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  placeholder: PropTypes.string.isRequired
 };
 
 type Props = InferProps<typeof types>;
 
 const InputField: FunctionComponent<Props> = memo(props => {
-  const { className, type = "text", ...otherProps } = props;
+  const { placeholder = "", className, type = "text", ...otherProps } = props;
 
   /* eslint-disable react/jsx-props-no-spreading */
   return (
     <input
       type={type}
+      placeholder={placeholder}
       className={classNames("input-field", className)}
       {...otherProps}
     />
@@ -28,7 +30,8 @@ const InputField: FunctionComponent<Props> = memo(props => {
 InputField.propTypes = types;
 
 InputField.defaultProps = {
-  className: ""
+  className: "",
+  placeholder: ""
 };
 
 export default InputField;

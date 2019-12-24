@@ -1,15 +1,22 @@
 @import "./SearchBar/_searchBar.scss";
 
 .links-bar {
-  background-color: $teal-700;
+  $links-bar-background-color: $teal-800;
+  $links-bar-head-background-color: $teal-600;
+  $links-bar-link-background-color: $teal-700;
+  $links-bar-link-background-color-hover: $teal-500;
+
+  background-color: $links-bar-background-color;
   height: 100%;
   transition: width 0.5s ease-in-out;
   width: 200px;
 
   &.links-bar--shrink {
     width: 45px;
+
     .links {
       .link {
+
         // background-color: red;
         .link__text {
           opacity: 0;
@@ -24,8 +31,9 @@
     display: flex;
     align-items: center;
     box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
-    background-color: $teal-400;
+    background-color: $links-bar-head-background-color;
     color: $teal-50;
+    overflow: hidden;
 
     .search-bar {
       padding: 0 10px;
@@ -43,49 +51,50 @@
       flex-shrink: 0;
     }
   }
-}
 
-.links {
-  overflow: auto;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  height: calc(100% - 38px);
 
-  .link {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 100%;
+  .links {
+    overflow: auto;
+    list-style-type: none;
     margin: 0;
-    border-radius: 0;
-    color: $teal-50;
-    background-color: $teal-600;
-    padding: 5px 10px 5px 13px;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    padding: 0;
+    height: calc(100% - 38px);
 
-    &:hover {
-      background-color: $teal-400;
-    }
+    .link {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      margin: 0;
+      border-radius: 0;
+      color: white;
+      background-color: $links-bar-link-background-color;
+      padding: 5px 10px 5px 11px;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
 
-    .link__img {
-      flex-grow: 0;
-      flex-shrink: 0;
-      height: 12px;
-      width: 12px;
-      margin-right: 10px;
-      border-radius: 50%;
-      padding: 3px;
-      box-sizing: content-box;
-      background-color: $teal-50;
-    }
+      &:hover {
+        background-color: $links-bar-link-background-color-hover;
+      }
 
-    .link__text {
-      opacity: 1;
-      transition: opacity .3s ease-in-out 0.2s;
+      .link__img {
+        flex-grow: 0;
+        flex-shrink: 0;
+        height: 12px;
+        width: 12px;
+        margin-right: 10px;
+        border-radius: 50%;
+        padding: 3px;
+        box-sizing: content-box;
+        background-color: white;
+      }
+
+      .link__text {
+        opacity: 1;
+        transition: opacity .3s ease-in-out 0.2s;
+      }
     }
   }
 }

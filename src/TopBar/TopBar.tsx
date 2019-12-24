@@ -1,6 +1,6 @@
 import React, { useState, FunctionComponent } from "react";
 import { InferProps } from "prop-types";
-import { InputFieldText, ButtonIcon } from "../components";
+import { InputField, ButtonIcon } from "../components";
 import { Icons } from "../components/types";
 
 const types = {};
@@ -12,9 +12,12 @@ const TopBar: FunctionComponent<Props> = () => {
 
   return (
     <header className="top-bar">
-      <InputFieldText
+      <h4>Linkim</h4>
+      <InputField
+        type='text'
         onChange={({ target: { value } }) => setLink(value)}
         value={link}
+        placeholder='Enter url here'
       />
       <ButtonIcon
         className="btn-primary"

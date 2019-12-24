@@ -12,12 +12,7 @@ type Props = InferProps<typeof types>;
 
 const InputFieldText: FunctionComponent<Props> = memo(props => {
   /* eslint-disable react/jsx-props-no-spreading */
-  return (
-    <InputField
-      type='text'
-      {...props}
-    />
-  );
+  return <InputField type="text" {...props} />;
   /* eslint-enable react/jsx-props-no-spreading */
 });
 
