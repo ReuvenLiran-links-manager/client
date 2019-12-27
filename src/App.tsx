@@ -2,7 +2,7 @@ import React, { useState, CSSProperties } from "react";
 import "./App.scss";
 import { Iframe } from "./components";
 import TopBar from "./TopBar/TopBar";
-import data from "./data.json";
+import LINKS from "./data.json";
 import LinksBar from "./LinksBar/LinksBar";
 
 const PROXY = "http://localhost:9000/";
@@ -13,7 +13,7 @@ const mystyles = {
 
 const listenser = new Set();
 
-function listenOn(event: String, callback: Function) {
+function listenOn(event: string, callback: Function) {
   if (!listenser.has(event)) {
     window.addEventListener(
       "message",
@@ -53,7 +53,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <LinksBar
-        links={data}
+        links={LINKS}
         onClick={newUrl => {
           const clearProxyBase = `${PROXY}clearProxyBase`;
           setUrl(clearProxyBase);
