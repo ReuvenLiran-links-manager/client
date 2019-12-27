@@ -5,24 +5,65 @@ import TopBar from "./TopBar/TopBar";
 import data from "./data.json";
 import LinksBar from "./LinksBar/LinksBar";
 
+const PROXY = "http://localhost:9000/";
+
 const mystyles = {
   display: "none"
 } as React.CSSProperties;
 
+const listenser = new Set();
+
+function listenOn(event: String, callback: Function) {
+  if (!listenser.has(event)) {
+    window.addEventListener(
+      "message",
+      e => {
+        const { data, origin, isTrusted } = e;
+        if (
+          typeof data === "object" &&
+          origin === "http://localhost:9000" &&
+          isTrusted
+        ) {
+          listenser.add(event);
+
+          console.log("data", e);
+          if (data.event === event) {
+            callback(e);
+          }
+        }
+      },
+      false
+    );
+  }
+}
+
 const App: React.FC = () => {
   const [url, setUrl] = useState("");
-  setTimeout(() => {
-    setUrl("http://localhost:9000/https%3A%2F%2Fwww.google.com");
 
-    // setUrl("http://localhost:9000/https%3A%2F%2Fwww.google.com");
-  }, 5000);
+  listenOn("service_worker_ready", () => {
+    setUrl("http://localhost:9000/https%3A%2F%2Fwww.google.com");
+  });
+  // setTimeout(() => {
+  //   setUrl("http://localhost:9000/https%3A%2F%2Fwww.google.com");
+  //   // setUrl(
+  //   //   "http://localhost:9000/https%3A%2F%2Funix.stackexchange.com%2Fquestions%2F5642%2Fwhat-if-kill-9-does-not-work"
+  //   // );
+  // }, 2000);
 
   return (
     <div className="App">
       <LinksBar
         links={data}
-        onClick={() => {
-          console.log("empty");
+        onClick={newUrl => {
+          const clearProxyBase = `${PROXY}clearProxyBase`;
+          setUrl(clearProxyBase);
+
+          const proxyUrl = PROXY + encodeURIComponent(newUrl);
+          setTimeout(() => {
+            setUrl(proxyUrl);
+          }, 500);
+
+          console.log(proxyUrl);
         }}
       />
 
@@ -31,7 +72,7 @@ const App: React.FC = () => {
         <Iframe
           style={mystyles}
           id="service-worker"
-          src="http://localhost:9000/html.html"
+          src="http://localhost:9000/static/proxy-init.html"
         />
         <Iframe id="my-iframe" src={url} />
       </main>

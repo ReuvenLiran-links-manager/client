@@ -4,9 +4,9 @@
   "private": true,
   "dependencies": {
     "classnames": "2.2.6",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "prop-types": "15.7.2",
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -17,7 +17,7 @@
     "lint": "eslint 'src/**/*.{js,ts,tsx}'",
     "fix": "eslint --fix 'src/**/*.{js,ts,tsx}'",
     "format": "prettier --write \"src/**/*.tsx\"",
-    "fix-commit": "yarn fix && git add . && git commit -em  \"pre push - fixed by prettier and eslint\""
+    "fix-commit": "yarn fix && git add ."
   },
   "husky": {
     "hooks": {
@@ -51,17 +51,19 @@
     "customize-cra": "^0.9.1",
     "eslint": "6.7.2",
     "eslint-config-airbnb": "18.0.1",
-    "eslint-config-prettier": "^6.7.0",
+    "eslint-config-prettier": "6.7.0",
     "eslint-import-resolver-typescript": "2.0.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-json": "2.0.1",
     "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-prettier": "3.1.1",
     "eslint-plugin-react": "7.17.0",
+    "express": "4.17.1",
+    "http-proxy-middleware": "0.20.0",
     "husky": "^3.1.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "4.13.0",
     "prettier": "1.19.1",
-    "prettier-eslint-cli": "^5.0.0",
+    "prettier-eslint-cli": "5.0.0",
     "react-app-rewired": "^2.1.5",
     "react-scripts": "3.2.0",
     "typescript": "3.7.3"
